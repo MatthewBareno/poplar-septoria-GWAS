@@ -9,6 +9,10 @@ __pycache__/
 # data
 data/*.gz
 
+# data
+data/*.fastq
+
+
 # Distribution / packaging
 .Python
 build/
