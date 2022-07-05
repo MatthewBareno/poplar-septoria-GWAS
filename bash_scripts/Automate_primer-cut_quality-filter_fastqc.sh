@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #remember to enter the cutadapt environment with this command:
         #conda activate cutadaptenv
 
@@ -6,13 +8,15 @@
 #creates files of all fastq files in a directory
 ls ../data/*.fastq > allfiles.txt
 #cuts the file list by unique identifiers
-cut -c 50-55 allfiles.txt  > files_by_code.txt
+ls *.fastq > allfiles.txt
+cut -d "-" -f 7-9 allfiles.txt > dashdelimit.txt
+cut -d "_" -f 1-2 dashdelimit.txt > identifier.txt
 
 #for loop for defining and finding names of files
 for k in {1..2}; 
 do
 
-name=$(sed -n $k{p} files_by_code.txt)
+name=$(sed -n $k{p} identifier.txt)
 
 #cuts primers using paired-end reads, creates intermediate primer-cut fastqs
 cutadapt -j 15 -a ATCGGAAGAGCACACGTCTGAACTCCAGTCACATTACTCGATCTCGTATG -A ATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGGCTATAGTGTAGATCTC -o intermediate$name*R1i.fastq  -p intermediate$name*R2i.fastq ../data/*$name*R1*.fastq ../data/*$name*R2*.fastq
