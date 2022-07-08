@@ -8,8 +8,14 @@
 #creates files of all fastq files in a directory
 #ls ../data/*.gz > allfiles.txt
 #cuts the file list by unique identifiers
+<<<<<<< HEAD
 #cut -d "-" -f 7-9 allfiles.txt > dashdelimit.txt
 #cut -d "_" -f 1-2 dashdelimit.txt > identifier.txt
+=======
+ls *.fastq > allfiles.txt
+cut -d "-" -f 7-9 allfiles.txt > dashdelimit.txt
+cut -d "_" -f 1-2 dashdelimit.txt > identifier.txt
+>>>>>>> 3fa1843bdd8d1051af67d8942f6de94229677a35
 
 #for loop for defining and finding names of files
 for k in {1..20}; 
