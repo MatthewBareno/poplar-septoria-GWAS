@@ -13,7 +13,7 @@ data/*.gz
 data/*.fastq
 
 #cleaned_data
-cleaned-data/quality_filtered/*.fastq
+cleaned-data/quality_filtered/*.gz
 
 # Distribution / packaging
 .Python
