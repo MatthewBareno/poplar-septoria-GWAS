@@ -25,27 +25,27 @@ Steps:
 
     - in download options, only **☐ Genomic Sequence** was selected
 
-3. Using [this](https://userweb.eng.gla.ac.uk/umer.ijaz/bioinformatics/BWA_tutorial.pdf) tutorial the reference genome was indexed with
-
-`bwa index REFERENCE.FASTA`
-
-4. Reads were combined into a SAM file using 
-
-`bwa mem REFERENCE.fasta INPUT_R1.fastq INPUT_R2.fastq > OUTPUT.sam`
-
-5. sam file converted to bam file using
-
-`samtools view -h -b -S INPUT.sam > OUTPUT.bam`
-
-6. filter bam file for only sequences that were mapped against reference genome
-
-`samtools view -b -F 4 OUTPUT.bam > FILTERED.bam`
-
-7. Using [this](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format), a .dict file and .fai file were created from the reference file
+3. Using [this](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format), a .dict file and .fai file were created from the reference file
 
 `gatk CreateSequenceDictionary -R REFERENCE.fasta`
 
 `samtools faidx REFERENCE.fasta`
+
+4. Using [this](https://userweb.eng.gla.ac.uk/umer.ijaz/bioinformatics/BWA_tutorial.pdf) tutorial the reference genome was indexed with
+
+`bwa index REFERENCE.FASTA`
+
+5. Reads were combined into a SAM file using 
+
+`bwa mem REFERENCE.fasta INPUT_R1.fastq INPUT_R2.fastq > OUTPUT.sam`
+
+6. sam file converted to bam file using
+
+`samtools view -h -b -S INPUT.sam > OUTPUT.bam`
+
+7. filter bam file for only sequences that were mapped against reference genome
+
+`samtools view -b -F 4 OUTPUT.bam > FILTERED.bam`
 
 8. Using [this](https://gatk.broadinstitute.org/hc/en-us/articles/360035531892-GATK4-command-line-syntax) a vcf file creation was _attempted_ using
 
