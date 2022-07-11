@@ -20,6 +20,7 @@ Steps:
 `cutadapt -q 30 -a PRIMER_OF_R1 -A PRIMER_OF_R2 -o OUTPUT1  -p OUTPUT2 INPUT1 INPUT2`
 
 **process verified by the html output of a separate fastqc analysis**
+i created a bash script which automated this process over 60 samples.
 
 2. Downloaded reference genome of septoria musiva from [here](https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_000320565.1/)
 
@@ -82,4 +83,9 @@ ERROR:MISSING_READ_GROUP	1
 WARNING:QUALITY_NOT_STORED	5
 
 WARNING:RECORD_MISSING_READ_GROUP	11589713
+
+I tried this over many different samples (not just Nisk1 as shown) and got the same issue. Ricardo suspected that this is due to the oringinal fastq files not actually being septoria. Someone could have misnamed them, leading to all these issues. This would make sense of the line "WARNING:RECORD_MISSING_READ_GROUP	11589713" where it seems to suggest that the given genomes do not posses any of the read groups relative to the reference genome (which we are more certain of). 
+
+To test this, i practiced assembling a genome into a fasta file from two read files (that were primer and quality filtered) after step 1. the following command accomplsihed this:
+`spades.py -1 INPUT.R1.fastq -2 INPUT.R2.fastq -o OUTPUT.fasta`
 
