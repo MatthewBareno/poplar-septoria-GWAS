@@ -89,3 +89,4 @@ I tried this over many different samples (not just Nisk1 as shown) and got the s
 To test this, i practiced assembling a genome into a fasta file from two read files (that were primer and quality filtered) after step 1. the following command accomplsihed this:
 `spades.py -1 INPUT.R1.fastq -2 INPUT.R2.fastq -o OUTPUT.fasta`
 
+.
