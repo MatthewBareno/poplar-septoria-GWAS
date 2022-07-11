@@ -11,6 +11,9 @@ https://userweb.eng.gla.ac.uk/umer.ijaz/bioinformatics/BWA_tutorial.pdf
 https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller
 https://gatk.broadinstitute.org/hc/en-us/articles/360035891231-Errors-in-SAM-or-BAM-files-can-be-diagnosed-with-ValidateSamFile
 
+.
+
+Steps:
 
 1. fastqc applied to given fastq R1/R2 files. Primer cutting and quality filtering above score of 30 accomplished with
 
@@ -20,7 +23,7 @@ https://gatk.broadinstitute.org/hc/en-us/articles/360035891231-Errors-in-SAM-or-
 
 2. Downloaded reference genome of septoria musiva from [here](https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_000320565.1/)
 
-    - in download options only **☐ Genomic Sequence** was selected
+    - in download options, only **☐ Genomic Sequence** was selected
 
 3. Using [this](https://userweb.eng.gla.ac.uk/umer.ijaz/bioinformatics/BWA_tutorial.pdf) tutorial the reference genome was indexed with
 
@@ -38,7 +41,7 @@ https://gatk.broadinstitute.org/hc/en-us/articles/360035891231-Errors-in-SAM-or-
 
 `samtools view -b -F 4 OUTPUT.bam > FILTERED.bam`
 
-7. Using [this](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format) a .dict file and .fai file were created from the reference file
+7. Using [this](https://gatk.broadinstitute.org/hc/en-us/articles/360035531652-FASTA-Reference-genome-format), a .dict file and .fai file were created from the reference file
 
 `gatk CreateSequenceDictionary -R REFERENCE.fasta`
 
@@ -53,3 +56,26 @@ but an error was returned:
 the chief issue appears to be in the message:
 
 "_java.lang.IllegalArgumentException: samples cannot be empty_"
+
+.
+
+Troubleshooting:
+
+I googled the previous error and found [this](https://gatk.broadinstitute.org/hc/en-us/community/posts/360063062572-Not-getting-vcf-file) board. 
+
+The answer suggested that it relates to an issue with the sam/bam file and encouraged [this]([url](https://gatk.broadinstitute.org/hc/en-us/articles/360035891231-Errors-in-SAM-or-BAM-files-can-be-diagnosed-with-ValidateSamFile) tutorial.
+
+Being that the sam file creation was the first step, i ran ValidateSamFile on the sam file as
+
+`gatk ValidateSamFile -I OUTPUT.sam`
+
+and got a long list of errors and warnings:
+
+file:///home/matthewbareno/Pictures/Screenshots/Screenshot%20from%202022-07-11%2011-56-41.png![image](https://user-images.githubusercontent.com/108294550/178338005-820ae884-0d79-4618-8c97-a573154efbc1.png)
+
+to simplify, i ran it in summary mode and got:
+![image](https://user-images.githubusercontent.com/108294550/178347769-f32532c0-88a3-4809-9db4-bc6dfc4062d0.png)
+the key information is:
+
+![image](https://user-images.githubusercontent.com/108294550/178347867-21b2e4be-e855-42a5-88e8-f6ab03dd1c87.png)
+
