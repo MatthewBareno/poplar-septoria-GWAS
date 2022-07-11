@@ -77,5 +77,7 @@ to simplify, i ran it in summary mode and got:
 ![image](https://user-images.githubusercontent.com/108294550/178347769-f32532c0-88a3-4809-9db4-bc6dfc4062d0.png)
 the key information is:
 
-![image](https://user-images.githubusercontent.com/108294550/178347867-21b2e4be-e855-42a5-88e8-f6ab03dd1c87.png)
+ERROR:MISSING_READ_GROUP	1
+WARNING:QUALITY_NOT_STORED	5
+WARNING:RECORD_MISSING_READ_GROUP	11589713
 
