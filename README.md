@@ -103,4 +103,18 @@ I installed picard.jar to accomplish this and used the [following](https://broad
 
 I inferred that adding the read group needed to be done after step 5 in the steps for attempt 1 because doing it after would force us to work in binary, which is not what the addorreplacegroups function works in. Also, ricardo hinted at this. so i took an output file from step 5 (sam file) and added a read group using:
 
-`
+`java -jar PICARD.jar AddOrReplaceReadGroups -I INPUT.sam -O OUTPUT.sam -RGLB lib1 -RGPL illumna -RGPU unit1 -RGSM 20`
+
+I got a successful output file and continued with steps 6-8 to get the filtered bam file. 
+
+I attempted step 8 and got the following error:
+
+"A USER ERROR has occurred: Traversal by intervals was requested but some input files are not indexed.
+Please index all input files:"
+
+And so i indexed the filtered bam file from the product of step 7 as:
+
+`samtools index FILTERED.bam`
+
+and reran step 8 and got a successful vcf file!
+
