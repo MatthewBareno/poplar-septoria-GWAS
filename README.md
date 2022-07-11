@@ -78,6 +78,8 @@ to simplify, i ran it in summary mode and got:
 the key information is:
 
 ERROR:MISSING_READ_GROUP	1
+
 WARNING:QUALITY_NOT_STORED	5
+
 WARNING:RECORD_MISSING_READ_GROUP	11589713
 
