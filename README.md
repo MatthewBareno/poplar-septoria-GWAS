@@ -90,3 +90,11 @@ To test this, i practiced assembling a genome into a fasta file from two read fi
 `spades.py -1 INPUT.R1.fastq -2 INPUT.R2.fastq -o OUTPUT.fasta`
 
 .
+
+we then applied bbsketch to the reference genome and the newly generated fasta. the bbsketch results affirmed that the fastq dataset given was indeed septoria. 
+
+.
+
+We were then back at square one. We tried googling the error and realized the error "ERROR:MISSING_READ_GROUP	1" simply means that its missing a read group, so we have to add them! 
+
+I installed picard.jar to accomplish this and used the [following](https://broadinstitute.github.io/picard/command-line-overview.html#AddOrReplaceReadGroups) tutorial.
