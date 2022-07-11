@@ -13,7 +13,7 @@ https://gatk.broadinstitute.org/hc/en-us/articles/360035891231-Errors-in-SAM-or-
 
 .
 
-Steps:
+Steps (attempt 1):
 
 1. fastqc applied to given fastq R1/R2 files. Primer cutting and quality filtering above score of 30 accomplished with
 
@@ -47,6 +47,8 @@ i created a bash script which automated this process over 60 samples.
 7. filter bam file for only sequences that were mapped against reference genome
 
 `samtools view -b -F 4 OUTPUT.bam > FILTERED.bam`
+
+i created another bash script which automated steps 5-7 for the 60 samples given.
 
 8. Using [this](https://gatk.broadinstitute.org/hc/en-us/articles/360035531892-GATK4-command-line-syntax) a vcf file creation was _attempted_ using
 
@@ -98,3 +100,7 @@ we then applied bbsketch to the reference genome and the newly generated fasta. 
 We were then back at square one. We tried googling the error and realized the error "ERROR:MISSING_READ_GROUP	1" simply means that its missing a read group, so we have to add them! 
 
 I installed picard.jar to accomplish this and used the [following](https://broadinstitute.github.io/picard/command-line-overview.html#AddOrReplaceReadGroups) tutorial.
+
+I inferred that adding the read group needed to be done after step 5 in the steps for attempt 1 because doing it after would force us to work in binary, which is not what the addorreplacegroups function works in. Also, ricardo hinted at this. so i took an output file from step 5 (sam file) and added a read group using:
+
+`
