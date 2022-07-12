@@ -126,4 +126,5 @@ in short, nothing was fixed and a new error was added. the merge solution does n
 
 .
 
-Ricardo suggested that i try a different reference genome file that he provided. I repeated steps 3-5, and used the addoreplacereadgroups function again because when he did it the file size wasn't reduced. 
+Ricardo suggested that i try a different reference genome file that he provided. I repeated steps 3-5, and used the addoreplacereadgroups function again because when he did it the file size wasn't reduced. After using the AddOrReplaceReadGroups function, the same issue was present (the unfiltered [original] is not the same size as the Nisk1.sam, which is the output)![image](https://user-images.githubusercontent.com/108294550/178601475-5c14a7d8-9367-40d9-b52f-dcee00ca3456.png)
+
