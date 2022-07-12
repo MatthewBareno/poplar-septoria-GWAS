@@ -124,6 +124,7 @@ and reran step 8 and got a vcf file!
 
 Troubleshooting (continued):
 
+vcf errors!
 
 The vcf file is not formatted correctly
 . i suspect this is due to the java AddOrReplaceReadGroup function not actually adding a read group, but creating a separate read group file. I then tried to merge the read group file (.sam format) with the original sam by using [merge](http://www.htslib.org/doc/samtools-merge.html)
@@ -139,4 +140,6 @@ and got the following issues:
 
 
 in short, nothing was fixed and a new error was added. the merge solution does not work. 
+
+i looked for another solution and found [addreplacerg](http://www.htslib.org/doc/samtools-addreplacerg.html)
 
