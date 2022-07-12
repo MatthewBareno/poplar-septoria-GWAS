@@ -114,7 +114,12 @@ Please index all input files:"
 
 And so i indexed the filtered bam file from the product of step 7 as:
 
+
 `samtools index FILTERED.bam`
+
 
 and reran step 8 and got a successful vcf file!
 
+.
+
+The vcf file 
