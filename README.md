@@ -130,5 +130,5 @@ The vcf file is not formatted correctly
 
 `samtools merge -n ORIGINAL.sam -r READGROUP.sam -o Nisk1actual.sam`
 
-and proceeded through steps 6-8.
+and proceeded through steps 6-8, as well as indexing the filtered bam file.
 
