@@ -1,16 +1,4 @@
 # poplar-septoria-GWAS
-
-data directory contains reference genome
-
-scripts are in bash_scripts
-
-fastq reads are in shared community folder
-
-relevant tutorials
-https://userweb.eng.gla.ac.uk/umer.ijaz/bioinformatics/BWA_tutorial.pdf
-https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller
-https://gatk.broadinstitute.org/hc/en-us/articles/360035891231-Errors-in-SAM-or-BAM-files-can-be-diagnosed-with-ValidateSamFile
-
 .
 
 Steps (attempt 1):
@@ -93,7 +81,7 @@ To test this, i practiced assembling a genome into a fasta file from two read fi
 
 .
 
-we then applied bbsketch to the reference genome and the newly generated fasta. the bbsketch results affirmed that the fastq dataset given was indeed septoria. 
+we then applied bbsketch to the reference genome and the newly generated fasta. the bbsketch results confirmed that the fastq dataset given was indeed septoria. 
 
 .
 
@@ -101,7 +89,7 @@ We were then back at square one. We tried googling the error and realized the er
 
 I installed picard.jar to accomplish this and used the [following](https://broadinstitute.github.io/picard/command-line-overview.html#AddOrReplaceReadGroups) tutorial.
 
-I inferred that adding the read group needed to be done after step 5 in the steps for attempt 1 because doing it after would force us to work in binary, which is not what the addorreplacegroups function works in. Also, ricardo hinted at this. so i took an output file from step 5 (sam file) and added a read group using:
+I guessed that adding the read group needed to be done after step 5 in the steps for attempt 1 because doing it after would force us to work in binary, which is not what the addorreplacegroups function works in. Also, ricardo hinted at this. so i took an output file from step 5 (sam file) and added a read group using:
 
 `java -jar PICARD.jar AddOrReplaceReadGroups -I INPUT.sam -O OUTPUT.sam -RGLB lib1 -RGPL illumna -RGPU unit1 -RGSM 20`
 
