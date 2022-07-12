@@ -136,6 +136,8 @@ I proceeded to, at the request of ricardo, replace steps 6-7 with the following 
 
 `java -jar picard.jar MarkDuplicates -I ID.bam -O ID.mdup.bam -M Nisk1.mdup -ASSUME_SORT_ORDER coordinate -CREATE_INDEX true`
 
+*-M creates a .mdup file to write out duplicates to.*
+
 `java -jar picard.jar SortSam -I ID.mdup.bam -O ID.mdup.sorted.bam -SORT_ORDER coordinate -CREATE_INDEX true`
 
 to my understanding, these commands accomplish the same functions, just with a different package. they also sorted the contents better. It also eliminates the need to index the .bam files.
