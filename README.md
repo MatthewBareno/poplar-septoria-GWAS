@@ -132,9 +132,9 @@ The issue was that there was that the read files i was using to generate the ini
 
 I proceeded to, at the request of ricardo, replace steps 6-7 with the following commands
 
-`java -jar picard.jar SortSam -I ID.sam -O ID.rg.bam -SORT_ORDER coordinate -CREATE_INDEX true`
+`java -jar picard.jar SortSam -I ID.sam -O ID.bam -SORT_ORDER coordinate -CREATE_INDEX true`
 
-`java -jar picard.jar MarkDuplicates -I ID.rg.bam -O ID.mdup.bam -ASSUME_SORT_ORDER coordinate -CREATE_INDEX true`
+`java -jar picard.jar MarkDuplicates -I ID.bam -O ID.mdup.bam -M Nisk1.mdup -ASSUME_SORT_ORDER coordinate -CREATE_INDEX true`
 
 `java -jar picard.jar SortSam -I ID.mdup.bam -O ID.mdup.sorted.bam -SORT_ORDER coordinate -CREATE_INDEX true`
 
