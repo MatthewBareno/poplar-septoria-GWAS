@@ -60,9 +60,6 @@ Being that the sam file creation was the first step, i ran ValidateSamFile on th
 
 and got a long list of errors and warnings:
 
-file:///home/matthewbareno/Pictures/Screenshots/Screenshot%20from%202022-07-11%2011-56-41.png![image](https://user-images.githubusercontent.com/108294550/178338005-820ae884-0d79-4618-8c97-a573154efbc1.png)
-
-to simplify, i ran it in summary mode and got:
 ![image](https://user-images.githubusercontent.com/108294550/178347769-f32532c0-88a3-4809-9db4-bc6dfc4062d0.png)
 the key information is:
 
