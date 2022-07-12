@@ -128,7 +128,15 @@ Troubleshooting (continued):
 The vcf file is not formatted correctly
 . i suspect this is due to the java AddOrReplaceReadGroup function not actually adding a read group, but creating a separate read group file. I then tried to merge the read group file (.sam format) with the original sam by using [merge](http://www.htslib.org/doc/samtools-merge.html)
 
-`samtools merge -n ORIGINAL.sam -r READGROUP.sam -o Nisk1actual.sam`
+`samtools merge -n ORIGINAL.sam -r READGROUP.sam -o CLEANED.sam`
 
-and proceeded through steps 6-8, as well as indexing the filtered bam file.
+before proceeding, i used ValidateSamFile on the Nisk1actual to see what potential sources of error could be
+
+`gatk ValidateSamFile -I CLEANED.sam -MODE SUMMARY`
+
+and got the following issues:
+![image](https://user-images.githubusercontent.com/108294550/178591208-ba5f5032-3ac4-4b2c-b800-bd4236150262.png)
+
+
+in short, nothing was fixed and a new error was added. the merge solution does not work. 
 
