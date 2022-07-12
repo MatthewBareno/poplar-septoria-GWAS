@@ -129,4 +129,4 @@ in short, nothing was fixed and a new error was added. the merge solution does n
 
 .
 
-Ricardo suggested that i try a different reference file that he provided. I repeated steps 3-5, and used the addoreplace function again because when he did it the file size wasn't reduced. 
+Ricardo suggested that i try a different reference genome file that he provided. I repeated steps 3-5, and used the addoreplacereadgroups function again because when he did it the file size wasn't reduced. 
