@@ -118,11 +118,12 @@ And so i indexed the filtered bam file from the product of step 7 as:
 `samtools index FILTERED.bam`
 
 
-and reran step 8 and got a successful vcf file!
+and reran step 8 and got a vcf file!
 
 .
 
-The vcf file is not formatted correctly. i suspect this is due to the java AddOrReplaceReadGroup function not actually adding a read group, but creating a separate read group file. I then tried to merge the read group file (.sam format) with the original sam by
+The vcf file is not formatted correctly
+. i suspect this is due to the java AddOrReplaceReadGroup function not actually adding a read group, but creating a separate read group file. I then tried to merge the read group file (.sam format) with the original sam by using [merge](http://www.htslib.org/doc/samtools-merge.html)
 
 `samtools merge -n ORIGINAL.sam -r READGROUP.sam -o Nisk1actual.sam`
 
