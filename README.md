@@ -130,9 +130,12 @@ Ricardo suggested that i try a different reference genome file that he provided.
 
 The issue was that there was that the read files i was using to generate the initial sam file were quality and primer filtered. I attempted the same process starting from step 5 with the original, raw read files and got a successful sam file with a read group:![image](https://user-images.githubusercontent.com/108294550/178606345-b0709add-1942-4a7d-a7bb-f49de202beb9.png)
 
-I proceeded to, at the request of ricardo, replace steps 6-7 with the following commnds
+I proceeded to, at the request of ricardo, replace steps 6-7 with the following commands
+
 `java -jar picard.jar SortSam -I ID.sam -O ID.rg.bam -SORT_ORDER coordinate -CREATE_INDEX true`
+
 `java -jar picard.jar MarkDuplicates -I ID.rg.bam -O ID.mdup.bam -ASSUME_SORT_ORDER coordinate -CREATE_INDEX true`
+
 `java -jar picard.jar SortSam -I ID.mdup.bam -O ID.mdup.sorted.bam -SORT_ORDER coordinate -CREATE_INDEX true`
 
 to my understanding, these commands accomplish the same functions, just with a different package. they also sorted the contents better.
