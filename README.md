@@ -138,7 +138,10 @@ I proceeded to, at the request of ricardo, replace steps 6-7 with the following 
 
 *-M creates a .mdup file to write out duplicates to.*
 
-`java -jar picard.jar SortSam -I ID.mdup.bam -O ID.mdup.sorted.bam -SORT_ORDER coordinate -CREATE_INDEX true`
+`java -jar picard.jar SortSam -I ID.mdup.bam -O ID.sorted.bam -SORT_ORDER coordinate -CREATE_INDEX true`
 
 to my understanding, these commands accomplish the same functions, just with a different package. they also sorted the contents better. It also eliminates the need to index the .bam files.
+
+after running the three commands, the final output file was ID.sorted.bam. this was used as the input for step 8.
+
 
