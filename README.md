@@ -52,7 +52,7 @@ Troubleshooting:
 
 I googled the previous error and found [this](https://gatk.broadinstitute.org/hc/en-us/community/posts/360063062572-Not-getting-vcf-file) board. 
 
-The answer suggested that it relates to an issue with the sam/bam file and encouraged [this]([url](https://gatk.broadinstitute.org/hc/en-us/articles/360035891231-Errors-in-SAM-or-BAM-files-can-be-diagnosed-with-ValidateSamFile) tutorial.
+The answer suggested that it relates to an issue with the sam/bam file and encouraged [this](https://gatk.broadinstitute.org/hc/en-us/articles/360035891231-Errors-in-SAM-or-BAM-files-can-be-diagnosed-with-ValidateSamFile) tutorial.
 
 Being that the sam file creation was the first step, i ran ValidateSamFile on the sam file as
 
