@@ -9,6 +9,30 @@ __pycache__/
 # data
 data/*.gz
 
+#raw reads
+data/Septoria/reads/*.gz
+
+#raw reference genome
+#data/Septoria/Reference/*.fasta
+
+#quality filered reads
+cleaned-data/Septoria/reads_quality_filtered/*gz
+
+#intermediate foler
+output/intermediate
+
+output/Septoria/bam/
+output/Septoria/sam/
+output/Septoria/unfiltered_bam
+output/Septoria/Unfiltered_sam
+output/Septoria/sorted_bam
+output/Septoria/cov
+output/Septoria/count
+output/Septoria/lengths_genome
+
+#test big files
+test/*.sam
+
 # data
 data/*.fastq
 
