@@ -206,10 +206,13 @@ No of contigs: 458 \
 N50: 167,873 \
 No. of genes: 10,228 \ 
 
-Populus trichocarpa 
+Populus trichocarpa https://www.ncbi.nlm.nih.gov/genome/annotation_euk/Populus_trichocarpa/101/ https://www.ncbi.nlm.nih.gov/assembly/GCF_000002775.4
 
 > Populus
 Genome size: 434,289,848 \
 No of contigs: 8,318 \
 N50: 552,806 \
 No. of genes: 37,272 \
+
+.
+
