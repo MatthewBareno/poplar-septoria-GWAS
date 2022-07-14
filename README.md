@@ -193,3 +193,23 @@ STEPS UPDATED (attempt 2)
 `gatk HaplotypeCaller -R REF.fasta -I ID.sorted.bam -O ID.vcf`
 
 *produces .vcf files*
+
+.
+
+Summarizing the reference genomes
+
+Septoria Musiva (Sphaerulina Musiva) https://www.ncbi.nlm.nih.gov/assembly/GCF_000320565.1/#/st
+
+> 
+Genome size: 29,352,103 \
+No of contigs: 458 \
+N50: 167,873 \
+No. of genes: 10,228 \ 
+
+Populus trichocarpa 
+
+> 
+Genome size: 434,289,848 \
+No of contigs: 8,318 \
+N50: 552,806 \
+No. of genes: 37,272 \
