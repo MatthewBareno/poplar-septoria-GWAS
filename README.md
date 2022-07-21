@@ -190,9 +190,18 @@ STEPS UPDATED (attempt 2)
 
 7. produce vcf files from the .sorted.bam files
 
-`gatk HaplotypeCaller -R REF.fasta -I ID.sorted.bam -O ID.vcf`
+`gatk HaplotypeCaller -R REF.fasta -I ID.sorted.bam -O ID.vcf -ERC GVCF -ploidy 1`
 
 *produces .vcf files*
+
+8. produce a combined vcf file using CombineGVCFs
+
+
+`gatk CombineGVCFs -R REF.fasta -V ID.vcf -V ID2.vcf (...) -V IDN.vcf -O COMBINED.vcf
+
+9. produce a joint genotyping
+
+`gatk GenotypeGVCFs -R REF.fasta -V COMBINED.vcf -O COMBINED.gvcf.vcf
 
 .
 
