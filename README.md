@@ -197,11 +197,15 @@ STEPS UPDATED (attempt 2)
 8. produce a combined vcf file using CombineGVCFs
 
 
-`gatk CombineGVCFs -R REF.fasta -V ID.vcf -V ID2.vcf (...) -V IDN.vcf -O COMBINED.vcf
+`gatk CombineGVCFs -R REF.fasta -V ID.vcf -V ID2.vcf (...) -V IDN.vcf -O COMBINED.vcf`
+
+*produced .vcf FILE*
 
 9. produce a joint genotyping
 
-`gatk GenotypeGVCFs -R REF.fasta -V COMBINED.vcf -O COMBINED.gvcf.vcf
+`gatk GenotypeGVCFs -R REF.fasta -V COMBINED.vcf -O COMBINED.gvcf.vcf`
+
+*produces .vcf FILE*
 
 .
 
@@ -224,4 +228,15 @@ N50: 552,806 \
 No. of genes: 37,272 \
 
 .
+
+mini-test:
+**given the product of step 9 from attempt 2, i will try and conduct GWAS using GEMMA and will record the process here**
+
+1. Generate .bed, .bim, .fam files
+
+`plink --vcf X.vcf --allow-extra-chr`
+
+2. Generate .map, .ped, .nosex, and .log files
+
+`plink --vcf X.vcf --recode --out PREFIX --allow-extra-ch`
 
