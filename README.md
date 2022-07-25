@@ -240,4 +240,4 @@ mini-test:
 
 `plink --vcf X.vcf --recode --out PREFIX --allow-extra-ch`
 
-3. 
+3. `plink --file myped --recode bimbam --out mybimbam --allow-extra-chr`
