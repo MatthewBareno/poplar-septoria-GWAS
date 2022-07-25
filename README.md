@@ -240,3 +240,4 @@ mini-test:
 
 `plink --vcf X.vcf --recode --out PREFIX --allow-extra-ch`
 
+3. 
